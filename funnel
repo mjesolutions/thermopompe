@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thermopompe Québec</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tunnel de vente">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">    
+    <style>
+      .form-page, #page2, #page3 {
+          display: none;
+      }
+
+      @charset "UTF-8";
+      body {
+        padding: 1rem;
+        color: #797e86;
+        background-color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #18191b;
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      h1 {
+        color: #fff;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+        color: #18191b;
+      }
+
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      section > div {
+        flex: 0 0 calc(50% - 1rem);
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      input[type=radio] {
+        display: none;
+      }
+      input[type=radio]:not(:disabled) ~ label {
+        cursor: pointer;
+      }
+      input[type=radio]:disabled ~ label {
+        color: #2BC2E4;
+        border-color: #2BC2E4;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      label {
+        height: 100%;
+        display: block;
+        background: white;
+        border: 2px solid #2BC2E4;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0px 3px 10px -2px rgba(161, 170, 166, 0.5);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      label:hover {
+        transform: scale(1.03);
+      }
+
+      input[type=radio]:checked + label {
+        background: #2BC2E4;
+        color: #18191b;
+        box-shadow: 0px 0px 20px rgba(43, 194, 228, 1);
+      }
+      input[type=radio]:checked + label::after {
+        color: #2BC2E4;
+        font-family: FontAwesome;
+        border: 2px solid #2BC2E4;
+        content: url('https://i.postimg.cc/dtxSpQ8k/icon.png');
+        font-size: 24px;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0px 2px 5px -2px rgba(43, 194, 228, 1);
+      }
+
+      p {
+        font-weight: 900;
+        text-align: center;
+        color: #18191b;
+      }
+
+      @media only screen and (max-width: 700px) {
+        section > div {
+          flex: 0 0 100%;
+        }
+      }
+
+      .button-wrapper {
+        flex: 0 0 calc(50% - 1rem);
+        padding: 0.5rem;
+        margin-bottom: -1.5rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .button-container {
+          flex: 0 0 calc(50% - 0.5rem);
+      }
+
+      .previous-button-wrapper {
+        order: 5;
+      }
+
+      .next-button-wrapper {
+        order: 6;
+      }
+
+      .button {
+        background-color: #2BC2E4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+      }
+
+      .button:hover {
+        background-color: #1ca6c2;
+      }
+
+      .previous-button {
+        background-color: gray;
+      }
+
+      .previous-button:hover {
+        background-color: red;
+        transform: scale(1.03);
+      }
+
+      .next-button {
+        background-color: #037ffc;
+      }
+
+      .next-button:hover {
+        background-color: #2BC2E4;
+        transform: scale(1.03);
+      }
+
+      .input {
+        margin: 30px;
+        background: none;
+        border: none;
+        outline: none;
+        max-width: 190px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 9999px;
+        box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+        color: #fff;
+      }
+
+      .logo-container {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+      }
+
+      .logo {
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+      }
+
+      .form-element {
+        margin-bottom: -10px;
+        text-align: center;
+      }
+    </style>
+</head>
+<body> 
+
+    <form id="multi-page-form" action="https://docs.google.com/forms/d/e/1FAIpQLScJW1A_ghEbN-glBvQXKn7lBW614bwntNlahUQv-g0u5679Sg/formResponse" method="post" target="_self">
+
+      <div class="container" id="page1">
+
+      <div class="logo-container">
+          <img src="https://i.postimg.cc/mrHx8zJg/thermopompe.png" alt="Thermopompe Québec" class="logo">
+      </div>
+
+        <h1></h1>
+        <section>
+          <div class="form-element">
+            <span>Quel est votre nom complet ?*</span>
+            <input class="input" type="text" name="entry.475660514" placeholder="Nom complet">
+          </div>
+
+          <div class="form-element">
+            <span>Quel est votre adresse courriel ?*</span>
+            <input class="input" type="text" name="emailAddress" placeholder="Courriel">
+          </div>
+
+          <div class="form-element">
+            <span>Quel est votre numéro de téléphone ?*</span>
+            <input class="input" type="text" name="entry.59541695" placeholder="Téléphone">
+          </div>          
+
+          <div class="form-element">
+            <span>Quel est votre code postal ?*</span>
+            <input class="input" type="text" name="entry.520196509" placeholder="Code postal">
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(1)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage(2)">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container" id="page2">    
+        <h1>Quel type de maison avez-vous ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="control_01" name="entry.803854160" value="Condo/Appartement">
+            <label for="control_01">
+              <h2>Condo/Appartement</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="control_02" name="entry.803854160" value="Duplex/Triplex">
+            <label for="control_02">
+              <h2>Duplex/Triplex</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>      
+            </label>
+          </div>
+          <div class="cottage">
+            <input type="radio" id="control_03" name="entry.803854160" value="Cottage">
+            <label for="control_03">
+              <h2>Cottage</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>      
+            </label>
+          </div>
+          <div class="bungalow">
+            <input type="radio" id="control_04" name="entry.803854160" value="Bungalow">
+            <label for="control_04">
+              <h2>Bungalow</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(1)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage(3)">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container" id="page3">
+        <h1>Quelle est la superficie de l'étage ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="etage_01" name="entry.1352263261" value="650 pi2 et moins (9000 btu)">
+            <label for="etage_01">
+              <h2>650 pi2 et moins (9000 btu)</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="etage_02" name="entry.1352263261" value="650 à 900 pi2 (12 000 btu)">
+            <label for="etage_02">
+              <h2>650 à 900 pi2 (12 000 btu)</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="etage_03" name="entry.1352263261" value="900 à 1400 pi2 (18 000 btu)">
+            <label for="etage_03">
+              <h2>900 à 1400 pi2 (18 000 btu)</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="etage_04" name="entry.1352263261" value="1400 pi2 et plus (24 000 btu)">
+            <label for="etage_04">
+              <h2>1400 pi2 et plus (24 000 btu)</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(2)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage(4)">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container form-page" id="page4">
+        <h1>Combien de tête avez-vous besoin ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="tete_01" name="entry.2119825756" value="1">
+            <label for="tete_01">
+              <h2>1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="tete_02" name="entry.2119825756" value="2">
+            <label for="tete_02">
+              <h2>2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="tete_03" name="entry.2119825756" value="3">
+            <label for="tete_03">
+              <h2>3</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="tete_04" name="entry.2119825756" value="4">
+            <label for="tete_04">
+              <h2>4</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(3)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage(5)">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container form-page" id="page5">
+        <h1>Cherchez vous des systèmes admissibles au subventions ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="subvention_01" name="entry.1562012465" value="Oui">
+            <label for="subvention_01">
+              <h2>Oui</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="subvention_02" name="entry.1562012465" value="Non">
+            <label for="subvention_02">
+              <h2>Non</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(4)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage('subvention')">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container form-page" id="page6">
+        <h1>Quelles subventions désirez-vous ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="subvention_03" name="entry.1224456090" value="Subventions du Rénoclimat (jusqu'à 5000$)">
+            <label for="subvention_03">
+              <h2>Subventions du Rénoclimat (jusqu'à 5000$)</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="subvention_04" name="entry.1224456090" value="Subventions d'Hydro-Québec (entre 300$ et 1200$)">
+            <label for="subvention_04">
+              <h2>Subventions d'Hydro-Québec (entre 300$ et 1200$)</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(5)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage('choix')">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container form-page" id="page7">
+        <h1>Avez-vous déjà fait la visite avec un inspecteur du programme Rénoclimat ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="inspecteur_01" name="entry.558831676" value="Oui">
+            <label for="inspecteur_01">
+              <h2>Oui</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="inspecteur_02" name="entry.558831676" value="Non">
+            <label for="inspecteur_02">
+              <h2>Non</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(6)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage('inspecteur')">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container form-page" id="page8">
+        <h1>Avez-vous déjà une date de RDV avec l’inspecteur du programme Rénoclimat ?</h1>
+        <section>
+          <div>
+            <input type="radio" id="date_01" name="entry.2138777424" value="Oui">
+            <label for="date_01">
+              <h2>Oui</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+          <div>
+            <input type="radio" id="date_02" name="entry.2138777424" value="Non">
+            <label for="date_02">
+              <h2>Non</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar, tortor vel tempus tempor.</p>
+              <img src="https://i.postimg.cc/85z57bs0/maison.png" width="200" height="200" alt="Logo HubSpot"/>
+            </label>
+          </div>
+        </section>
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(7)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="button" onclick="goToPage(9)">Suivant</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="container form-page" id="page9">
+
+      <div class="logo-container">
+          <img src="https://i.postimg.cc/mrHx8zJg/thermopompe.png" alt="Thermopompe Québec" class="logo">
+      </div>
+
+        <h1>Merci pour votre confiance</h1>
+
+        <div class="button-wrapper">
+            <div class="button-container">
+                <button class="button previous-button" type="button" onclick="goToPage(8)">Précédant</button>
+            </div>
+            <div class="button-container">
+                <button class="button next-button" type="submit" onclick="goToPage(9)">Envoyer</button>
+            </div>
+        </div>
+      </div>
+
+    </form>
+
+    <script>
+      const form = document.getElementById('multi-page-form');
+      let currentPage = 1;
+
+      function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+
+      function goToPage(page) {
+        if (currentPage === 1 && page === 2) {
+          const nomComplet = form.elements['entry.475660514'].value;
+          const courriel = form.elements['emailAddress'].value;
+          const telephone = form.elements['entry.59541695'].value;
+          const codePostal = form.elements['entry.520196509'].value;
+
+          if (!nomComplet || !courriel || !telephone || !codePostal) {
+            alert('Veuillez remplir tous les champs obligatoires.');
+            return;
+          } else if (!validateEmail(courriel)) {
+            alert('Veuillez entrer une adresse courriel valide.');
+            return;
+          }
+        }
+
+        if (page === 'subvention') {
+          const subvention = form.elements['entry.1562012465'].value;
+          if (subvention === 'Oui') {
+            page = 6;
+          } else if (subvention === 'Non') {
+            page = 9;
+          } else {
+            alert('Veuillez choisir une option pour les subventions');
+            return;
+          }
+        } else if (page === 'choix') {
+          const choixSubvention = form.elements['entry.1224456090'].value;
+          if (choixSubvention === "Subventions du Rénoclimat (jusqu'à 5000$)") {
+            page = 7;
+          } else if (choixSubvention === "Subventions d'Hydro-Québec (entre 300$ et 1200$)") {
+            page = 9;
+          } else {
+            alert('Veuillez choisir une option pour les subventions');
+            return;
+          }
+        } else if (page === 'inspecteur') {
+          const inspecteur = form.elements['entry.558831676'].value;
+          if (inspecteur === 'Oui') {
+            page = 9;
+          } else if (inspecteur === 'Non') {
+            page = 8;
+          } else {
+            alert('Veuillez choisir une option pour la visite avec un inspecteur');
+            return;
+          }
+        }
+        
+        document.getElementById(`page${currentPage}`).style.display = 'none';
+        currentPage = page;
+        document.getElementById(`page${currentPage}`).style.display = 'block';
+      }
+
+      goToPage(currentPage);
+    </script>             
+
+</body>
+</html>

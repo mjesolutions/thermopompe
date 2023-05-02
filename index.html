@@ -649,7 +649,7 @@
 
         if (response.ok || response.type === 'opaque') {
           // Rediriger vers le bon lien
-          window.parent.postMessage({ 'redirectUrl': redirectUrl }, '*');
+          window.location.href = redirectUrl;
         } else {
           alert('Erreur lors de la soumission du formulaire. Veuillez réessayer.');
         }

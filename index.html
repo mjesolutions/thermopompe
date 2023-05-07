@@ -6,10 +6,10 @@
     <meta name="description" content="Tunnel de vente">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <base href="https://thermopompe-quebec.ca/" target="_parent">    
     <style>
-      .form-page, #page2, #page3 {
+      .form-page, #page2, #page3, #page8 {
           display: none;
       }
 
@@ -18,7 +18,7 @@
         padding: 1rem;
         color: #797e86;
         background-color: #ffffff;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Montserrat', sans-serif;
       }
 
       .container {
@@ -194,9 +194,10 @@
       }
 
       .logo {
-          width: 300px;
-          height: 300px;
+          width: 450px;
+          height: 450px;
           object-fit: contain;
+          margin-bottom: -90px;
       }
 
       .form-element {
@@ -224,49 +225,6 @@
     <form id="multi-page-form" action="https://docs.google.com/forms/d/e/1FAIpQLScJW1A_ghEbN-glBvQXKn7lBW614bwntNlahUQv-g0u5679Sg/formResponse" method="post" target="_self">
 
       <div class="container" id="page1">
-
-      <div class="logo-container">
-          <img src="https://i.postimg.cc/kXh45cQ8/thermopompe.png" alt="Thermopompe Québec" class="logo">
-      </div>
-
-        <h1></h1>
-        <section>
-          <div class="form-element">
-            <span>Quel est votre prénom ?</span>
-            <input class="input" type="text" name="entry.1755823999" placeholder="Prénom">
-          </div>
-
-          <div class="form-element">
-            <span>Quel est votre nom ?</span>
-            <input class="input" type="text" name="entry.475660514" placeholder="Nom">
-          </div>          
-
-          <div class="form-element">
-            <span>Quel est votre adresse courriel ?</span>
-            <input class="input" type="text" name="emailAddress" placeholder="Courriel">
-          </div>
-
-          <div class="form-element">
-            <span>Quel est votre numéro de téléphone ?</span>
-            <input class="input" type="text" name="entry.59541695" placeholder="Téléphone">
-          </div>          
-
-          <div class="form-element" id="postal-code">
-            <span>Quel est votre code postal ?</span>
-            <input class="input" type="text" name="entry.520196509" placeholder="Code postal">
-          </div>
-        </section>
-        <div class="button-wrapper">
-            <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(1)">Précédant</button>
-            </div>
-            <div class="button-container">
-                <button class="button next-button" type="button" onclick="goToPage(2)">Suivant</button>
-            </div>
-        </div>
-      </div>
-
-      <div class="container" id="page2">    
         <h1>Quel type de maison avez-vous ?</h1>
         <section>
           <div>
@@ -282,7 +240,7 @@
             <label for="control_02">
               <h2>Duplex/Triplex</h2>
               <p>Type de bâtiment résidentiel qui comporte deux ou trois logements</p>
-              <img src="https://i.postimg.cc/pTgw7mzm/Duplex.png" width="200" height="200" alt="Thermopompe-Québec"/>      
+              <img src="https://i.postimg.cc/HWXmKG0m/Duplex.png" width="200" height="200" alt="Thermopompe-Québec"/>      
             </label>
           </div>
           <div class="cottage">
@@ -307,12 +265,12 @@
                 <button class="button previous-button" type="button" onclick="goToPage(1)">Précédant</button>
             </div>
             <div class="button-container">
-                <button class="button next-button" type="button" onclick="goToPage(3)">Suivant</button>
+                <button class="button next-button" type="button" onclick="goToPage(2)">Suivant</button>
             </div>
         </div>
       </div>
 
-      <div class="container" id="page3">
+      <div class="container" id="page2">
         <h1>Quelle est la superficie de l'étage ?</h1>
         <section>
           <div>
@@ -350,15 +308,15 @@
         </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(2)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(1)">Précédant</button>
             </div>
             <div class="button-container">
-                <button class="button next-button" type="button" onclick="goToPage(4)">Suivant</button>
+                <button class="button next-button" type="button" onclick="goToPage(3)">Suivant</button>
             </div>
         </div>
       </div>
 
-      <div class="container form-page" id="page4">
+      <div class="container form-page" id="page3">
         <h1>Combien d'unités murales avez-vous besoin ?</h1>
         <section>
           <div>
@@ -396,15 +354,15 @@
         </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(3)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(2)">Précédant</button>
             </div>
             <div class="button-container">
-                <button class="button next-button" type="button" onclick="goToPage(5)">Suivant</button>
+                <button class="button next-button" type="button" onclick="goToPage(4)">Suivant</button>
             </div>
         </div>
       </div>
 
-      <div class="container form-page" id="page5">
+      <div class="container form-page" id="page4">
         <h1>Cherchez-vous des systèmes admissibles aux subventions ?</h1>
         <section>
           <div>
@@ -426,7 +384,7 @@
         </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(4)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(3)">Précédant</button>
             </div>
             <div class="button-container">
                 <button class="button next-button" type="button" onclick="goToPage('subvention')">Suivant</button>
@@ -434,29 +392,29 @@
         </div>
       </div>
 
-      <div class="container form-page" id="page6">
+      <div class="container form-page" id="page5">
         <h1>Quelles subventions désirez-vous ?</h1>
         <section>
           <div>
             <input type="radio" id="subvention_03" name="entry.1224456090" value="Subventions du Rénoclimat (jusqu'à 5000$)">
             <label for="subvention_03">
-              <h2>Subventions du Rénoclimat (jusqu'à 5000$)</h2>
-              <p>La subvention du Rénoclimat permet d'obtenir 2500$ pour 2 unités murales et 5000$ pour 3 unités murales</p>
+              <h2>Rénoclimat <br> (jusqu'à 5000$)</h2>
+              <p>La subvention du Rénoclimat permet d'obtenir 2500$ pour 2 unités murales et 5000$ pour 3 unités murales <br> (+ de délai)</p>
               <img src="https://i.postimg.cc/s1BwRmzy/8.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
           <div>
             <input type="radio" id="subvention_04" name="entry.1224456090" value="Subventions d'Hydro-Québec (entre 300$ et 1200$)">
             <label for="subvention_04">
-              <h2>Subventions d'Hydro-Québec (jusqu'à 1200$)</h2>
-              <p>Hydro‑Québec offre une aide financière de 50 $ par tranche de 1 000 BTU de chauffage à -8 °C</p>
+              <h2>Hydro-Québec <br> (jusqu'à 1200$)</h2>
+              <p>Hydro‑Québec offre une aide financière de 50 $ par tranche de 1 000 BTU de chauffage à -8 °C <br> (- de délai)</p>
               <img src="https://i.postimg.cc/dDznQCQC/7.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
         </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(5)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(4)">Précédant</button>
             </div>
             <div class="button-container">
                 <button class="button next-button" type="button" onclick="goToPage('choix')">Suivant</button>
@@ -464,7 +422,7 @@
         </div>
       </div>
 
-      <div class="container form-page" id="page7">
+      <div class="container form-page" id="page6">
         <h1>Avez-vous déjà fait la visite avec un inspecteur du programme Rénoclimat ?</h1>
         <section>
           <div>
@@ -486,7 +444,7 @@
         </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(6)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(5)">Précédant</button>
             </div>
             <div class="button-container">
                 <button class="button next-button" type="button" onclick="goToPage('inspecteur')">Suivant</button>
@@ -494,7 +452,7 @@
         </div>
       </div>
 
-      <div class="container form-page" id="page8">
+      <div class="container form-page" id="page7">
         <h1>Avez-vous déjà une date de rendez-vous avec l’inspecteur du programme Rénoclimat ?</h1>
         <section>
           <div>
@@ -516,28 +474,53 @@
         </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(7)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(6)">Précédant</button>
             </div>
             <div class="button-container">
-                <button class="button next-button" type="button" onclick="goToPage(9)">Suivant</button>
+                <button class="button next-button" type="button" onclick="goToPage(8)">Suivant</button>
             </div>
         </div>
       </div>
 
-      <div class="container form-page" id="page9">
+      <div class="container" id="page8">
 
       <div class="logo-container">
-          <img src="https://i.postimg.cc/kXh45cQ8/thermopompe.png" alt="Thermopompe Québec" class="logo">
+          <img src="https://i.postimg.cc/FH3mMMX3/Thermopompe-quebec.png" alt="Thermopompe Québec" class="logo">
       </div>
 
-        <h1>Merci pour votre confiance</h1>
+        <h1></h1>
+        <section>
+          <div class="form-element">
+            <span>Quel est votre prénom ?</span>
+            <input class="input" type="text" name="entry.1755823999" placeholder="Prénom">
+          </div>
 
+          <div class="form-element">
+            <span>Quel est votre nom ?</span>
+            <input class="input" type="text" name="entry.475660514" placeholder="Nom">
+          </div>          
+
+          <div class="form-element">
+            <span>Quel est votre adresse courriel ?</span>
+            <input class="input" type="text" name="emailAddress" placeholder="Courriel">
+          </div>
+
+          <div class="form-element">
+            <span>Quel est votre numéro de téléphone ?</span>
+            <input class="input" type="text" name="entry.59541695" placeholder="Téléphone">
+          </div>          
+
+          <div class="form-element" id="postal-code">
+            <span>Quel est votre code postal ?</span>
+            <input class="input" type="text" name="entry.520196509" placeholder="Code postal">
+          </div>
+        </section>
         <div class="button-wrapper">
             <div class="button-container">
-                <button class="button previous-button" type="button" onclick="goToPage(8)">Précédant</button>
+                <button class="button previous-button" type="button" onclick="goToPage(7)">Précédant</button>
             </div>
             <div class="button-container">
-                <button class="button next-button" type="submit" id="submit-button" onclick="goToPage(9)">Envoyer</button>
+                <button class="button next-button" type="submit" id="submit-button" onclick="goToPage(8)">Envoyer</button>
             </div>
         </div>
       </div>
@@ -554,7 +537,7 @@
       }
 
       function goToPage(page) {
-        if (currentPage === 1 && page === 2) {
+        if (currentPage === 8 && page === 9) {
           const prenom = form.elements['entry.1755823999'].value;
           const nom = form.elements['entry.475660514'].value;
           const courriel = form.elements['emailAddress'].value;
@@ -579,9 +562,9 @@
         if (page === 'subvention') {
           const subvention = form.elements['entry.1562012465'].value;
           if (subvention === 'Oui') {
-            page = 6;
+            page = 5;
           } else if (subvention === 'Non') {
-            page = 9;
+            page = 8;
           } else {
             alert('Veuillez choisir une option pour les subventions');
             return;
@@ -589,9 +572,9 @@
         } else if (page === 'choix') {
           const choixSubvention = form.elements['entry.1224456090'].value;
           if (choixSubvention === "Subventions du Rénoclimat (jusqu'à 5000$)") {
-            page = 7;
+            page = 6;
           } else if (choixSubvention === "Subventions d'Hydro-Québec (entre 300$ et 1200$)") {
-            page = 9;
+            page = 8;
           } else {
             alert('Veuillez choisir une option pour les subventions');
             return;
@@ -599,9 +582,9 @@
         } else if (page === 'inspecteur') {
           const inspecteur = form.elements['entry.558831676'].value;
           if (inspecteur === 'Oui') {
-            page = 9;
-          } else if (inspecteur === 'Non') {
             page = 8;
+          } else if (inspecteur === 'Non') {
+            page = 7;
           } else {
             alert('Veuillez choisir une option pour la visite avec un inspecteur');
             return;

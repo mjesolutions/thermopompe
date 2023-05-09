@@ -54,6 +54,21 @@
         margin-bottom: 2rem;
       }
 
+      .centered-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 100%;
+      }
+
+      .centered-container > div {
+        text-align: center;
+        width: calc(100% - 1rem);
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: -2rem;
+      }
+    
       input[type=radio] {
         display: none;
       }
@@ -218,6 +233,10 @@
       #page4 img {
         border-radius: 20px;
       }
+
+      input[type=radio][value="Je ne sais pas"]:checked + label {
+        background-color: yellow;
+      }
     </style>
 </head>
 <body> 
@@ -232,7 +251,7 @@
             <label for="control_01">
               <h2>Condo/Appartement</h2>
               <p>Un condo est un logement qui fait partie d’un immeuble en copropriété</p>
-              <img src="https://i.postimg.cc/63QgTdL2/Condo.png" width="200" height="200" alt="Thermopompe-Québec"/>
+              <img src="https://i.postimg.cc/6T3sp0Xj/38.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
           <div>
@@ -240,7 +259,7 @@
             <label for="control_02">
               <h2>Duplex/Triplex</h2>
               <p>Type de bâtiment résidentiel qui comporte deux ou trois logements</p>
-              <img src="https://i.postimg.cc/HWXmKG0m/Duplex.png" width="200" height="200" alt="Thermopompe-Québec"/>      
+              <img src="https://i.postimg.cc/SJBHVbz3/39.png" width="200" height="200" alt="Thermopompe-Québec"/>      
             </label>
           </div>
           <div class="cottage">
@@ -248,7 +267,7 @@
             <label for="control_03">
               <h2>Cottage</h2>
               <p>Une maison qui comporte deux étages avec un sous sol</p>
-              <img src="https://i.postimg.cc/rmWnDQRp/Cottage.png" width="200" height="200" alt="Thermopompe-Québec"/>      
+              <img src="https://i.postimg.cc/CZYXTC74/40.png" width="200" height="200" alt="Thermopompe-Québec"/>      
             </label>
           </div>
           <div class="bungalow">
@@ -256,7 +275,7 @@
             <label for="control_04">
               <h2>Bungalow</h2>
               <p>Maison qui ne comporte qu’un seul étage avec un sous sol</p>
-              <img src="https://i.postimg.cc/Kv9NvdpN/Bungalow.png" width="200" height="200" alt="Thermopompe-Québec"/>
+              <img src="https://i.postimg.cc/NKRSzC6M/41.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
         </section>
@@ -278,7 +297,7 @@
             <label for="etage_01">
               <h2>650 pi2 et moins (9000 btu)</h2>
               <p>Il s'agit généralement d'un studio ou une petite pièce</p>
-              <img src="https://i.postimg.cc/xdLMH75B/14.png" width="200" height="200" alt="Thermopompe-Québec"/>
+              <img src="https://i.postimg.cc/r0w0xrJ9/25.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
           <div>
@@ -286,7 +305,7 @@
             <label for="etage_02">
               <h2>650 à 900 pi2 (12 000 btu)</h2>
               <p>Il s'agit généralement d'un condo ou un étage à air ouverte</p>
-              <img src="https://i.postimg.cc/kBvMMxNY/15.png" width="200" height="200" alt="Thermopompe-Québec"/>
+              <img src="https://i.postimg.cc/BP8jwfRL/27.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
           <div>
@@ -294,7 +313,7 @@
             <label for="etage_03">
               <h2>900 à 1400 pi2 (18 000 btu)</h2>
               <p>Il s'agit généralement d'une maison d'un étage avec un sous-sol</p>
-              <img src="https://i.postimg.cc/hXCSTc59/16.png" width="200" height="200" alt="Thermopompe-Québec"/>
+              <img src="https://i.postimg.cc/JnhZdyWW/29.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
           <div>
@@ -302,7 +321,7 @@
             <label for="etage_04">
               <h2>1400 pi2 et plus (24 000 btu)</h2>
               <p>Il s'agit généralement d'une maison avec deux étages avec un sous-sol</p>
-              <img src="https://i.postimg.cc/BjZSjXMS/17.png" width="200" height="200" alt="Thermopompe-Québec"/>
+              <img src="https://i.postimg.cc/G8gBQmgn/31.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
           </div>
         </section>
@@ -380,6 +399,14 @@
               <p>Vous ne voulez pas obtenir une subvention lors de l'achat de votre système de thermopompe</p>
               <img src="https://i.postimg.cc/yWQ4LvPH/6.png" width="200" height="200" alt="Thermopompe-Québec"/>
             </label>
+          </div>
+          <div class="centered-container">
+            <div>
+              <input type="radio" id="subvention_03" name="entry.1562012465" value="Je ne sais pas">
+              <label for="subvention_03">
+                <h2>Je ne sais pas</h2>
+              </label>
+            </div>
           </div>
         </section>
         <div class="button-wrapper">
@@ -563,7 +590,7 @@
           const subvention = form.elements['entry.1562012465'].value;
           if (subvention === 'Oui') {
             page = 5;
-          } else if (subvention === 'Non') {
+          } else if (subvention === 'Non' || subvention === 'Je ne sais pas') {
             page = 8;
           } else {
             alert('Veuillez choisir une option pour les subventions');

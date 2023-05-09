@@ -130,10 +130,25 @@
       }
 
       @media only screen and (max-width: 700px) {
-        section > div {
-          flex: 0 0 100%;
-        }
+          section > div {
+              flex: 0 0 100%;
+              text-align: center; /* Ajout de la propriété text-align */
+              margin-left: -0.5rem;
+          }
+          .button-wrapper {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              margin-top: 2rem;
+          }
+          .button-container {
+              flex: 0 0 100%;
+              margin-bottom: 1rem;
+          }
       }
+
+
 
       .button-wrapper {
         flex: 0 0 calc(50% - 1rem);
@@ -236,6 +251,56 @@
 
       input[type=radio][value="Je ne sais pas"]:checked + label {
         background-color: yellow;
+      }
+
+      @media only screen and (max-width: 700px) {
+        #page8 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .logo {
+          width: 300px;
+          height: 300px;
+        }
+        .logo-container {
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+        section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        #page8 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .form-element {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+        
+        .input {
+          margin: 30px;
+          background: none;
+          border: none;
+          outline: none;
+          max-width: 190px;
+          padding: 10px 20px;
+          font-size: 16px;
+          border-radius: 9999px;
+          box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+          color: #fff;
+        }
       }
     </style>
 </head>
@@ -512,7 +577,7 @@
       <div class="container" id="page8">
 
       <div class="logo-container">
-          <img src="https://i.postimg.cc/FH3mMMX3/Thermopompe-quebec.png" alt="Thermopompe Québec" class="logo">
+          <img src="https://i.postimg.cc/Y9PPKFnw/Untitled-design.png" alt="Thermopompe Québec" class="logo">
       </div>
 
         <h1></h1>

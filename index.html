@@ -734,17 +734,9 @@
 
         window.addEventListener('message', function(event) {
           if (event.data && event.data.redirectUrl) {
-            window.location.href = decodeURIComponent(event.data.redirectUrl);
+            window.location.href = event.data.redirectUrl;
           }
         }, false);
-
-        // Vérifiez si l'URL contient une ancre avec un paramètre de redirection
-        const redirectHash = window.location.hash.substr(1);
-        if (redirectHash && redirectHash.startsWith('redirectUrl=')) {
-          const redirectUrl = redirectHash.substr('redirectUrl='.length);
-          const message = { redirectUrl };
-          window.postMessage(message, '*');
-        }
     </script>             
 
 </body>
